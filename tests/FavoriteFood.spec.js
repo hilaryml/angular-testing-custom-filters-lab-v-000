@@ -7,5 +7,9 @@ describe('Favorite Food Filter', function () {
 		$filter = $injector.get('$filter');
 	}));
 
-	
+	it('should return the people with that favorite food', function () {
+		var array = [{name: 'Adam', favoriteFood: 'chips'}, {name: 'Lisa', favoriteFood: 'pizza'}];
+		expect($filter('favoriteFood')(array, 'chips')).toEqual([{name: 'Adam', favoriteFood: 'chips'}]);
+	});
+
 });
